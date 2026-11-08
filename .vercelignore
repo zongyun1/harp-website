@@ -1,0 +1,5 @@
+.env*
+.git/
+.vercel/
+.DS_Store
+README.md

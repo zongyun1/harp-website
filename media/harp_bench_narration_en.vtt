@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.350 --> 00:00:07.784
+Harp Bench studies manipulation around active humans across four conditions: co-presence, contribution, interruption, and cueing.
+
+00:00:08.167 --> 00:00:14.986
+A co-presence example: while the person wipes the table, the robot puts a cube in the cabinet beside them.
+
+00:00:16.067 --> 00:00:22.934
+A contribution example: the person places one piece of bread in the basket, and the robot adds the other.
+
+00:00:26.217 --> 00:00:35.148
+An interruption example: the person picks up a shoe to inspect it. The robot waits, then resumes once the shoe is back.
+
+00:00:36.117 --> 00:00:42.216
+A cueing example: after the person drinks from the cup, the robot pours water into it.
+
+00:00:45.200 --> 00:00:51.883
+With thirty-seven tasks and forty-three human avatars, Harp Bench is an automatic evaluator and data generator.
