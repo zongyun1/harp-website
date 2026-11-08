@@ -173,6 +173,16 @@ table.results{border-collapse:collapse;width:100%;min-width:760px;font-size:14.5
 .results td.best{background:var(--best);color:var(--best-ink);font-weight:600}
 .results td.second{background:var(--second);color:var(--second-ink)}
 .results td.exp{color:var(--ink-2)}
+.results-summary th,.results-summary td{padding-block:12px}
+.results-summary tbody th{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:14.5px}
+.results-summary .category-name{color:var(--c)}
+.results-summary tbody th small{margin-left:6px;font-size:12px;font-weight:400;color:var(--ink-2)}
+.results-summary tr.all th{border-top:2px solid var(--ink);font-weight:800}
+.task-results{margin-top:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);box-shadow:var(--shadow);overflow:hidden}
+.task-results summary{cursor:pointer;padding:16px 18px;font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:600}
+.task-results summary span{font-weight:400;color:var(--ink-2)}
+.task-results[open] summary{border-bottom:1px solid var(--line)}
+.task-results .tablewrap{margin:16px;box-shadow:none}
 .legend{display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 0;font-size:13.5px;color:var(--ink-2)}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px;border:1px solid var(--line)}
 .findings{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:26px}
@@ -288,12 +298,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <h2>37-task evaluation</h2>
     <p class="lede measure">Success rate (%) on the evaluation seeds of all 37 tasks (up to 100 seeds per task). The full-state expert reads the human's intent from simulator state; the no-intent expert runs the same script without it.</p>
     <div class="tablewrap">
-    <table class="results">
+    <table class="results results-summary" aria-label="Success rate by category and across all tasks">
       <thead><tr>
-        <th>Task</th>
-        <th>Expert<small>full state</small></th>
-        <th>Expert<small>no intent</small></th>
-        <th>ACT</th><th>DP</th><th>&pi;<sub>0</sub></th><th>SmolVLA</th>
+        <th scope="col">Category</th>
+        <th scope="col">Expert<small>full state</small></th>
+        <th scope="col">Expert<small>no intent</small></th>
+        <th scope="col">ACT</th><th scope="col">DP</th><th scope="col">&pi;<sub>0</sub></th><th scope="col">SmolVLA</th>
+      </tr></thead>
+      <tbody>
+        <tr class="cue"><th scope="row"><span class="category-name">Cueing</span> <small>7 tasks</small></th><td class="exp">99.0</td><td class="exp">38.3</td><td>11.3</td><td class="best">16.9</td><td class="second">16.0</td><td>11.5</td></tr>
+        <tr class="con"><th scope="row"><span class="category-name">Contribution</span> <small>10 tasks</small></th><td class="exp">98.8</td><td class="exp">53.8</td><td>3.7</td><td class="second">4.2</td><td class="best">16.5</td><td>1.2</td></tr>
+        <tr class="int"><th scope="row"><span class="category-name">Interruption</span> <small>10 tasks</small></th><td class="exp">99.8</td><td class="exp">0.3</td><td class="second">8.8</td><td>5.7</td><td class="best">9.4</td><td>2.9</td></tr>
+        <tr class="cop"><th scope="row"><span class="category-name">Co-presence</span> <small>10 tasks</small></th><td class="exp">98.8</td><td class="exp">97.4</td><td class="second">18.1</td><td>13.0</td><td class="best">32.6</td><td>9.1</td></tr>
+        <tr class="all"><th scope="row">All tasks (37)</th><td class="exp">99.1</td><td class="exp">48.2</td><td class="second">10.4</td><td>9.4</td><td class="best">18.8</td><td>5.7</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="legend"><span><i style="background:var(--best)"></i>best learned policy</span><span><i style="background:var(--second)"></i>second best</span><span>Experts are shown for reference and are not ranked. Averages are unweighted means over tasks.</span></p>
+
+    <details class="task-results" id="task-results">
+      <summary>Per-task results <span>(37 tasks)</span></summary>
+    <div class="tablewrap">
+    <table class="results" aria-label="Success rate for each of the 37 tasks">
+      <thead><tr>
+        <th scope="col">Task</th>
+        <th scope="col">Expert<small>full state</small></th>
+        <th scope="col">Expert<small>no intent</small></th>
+        <th scope="col">ACT</th><th scope="col">DP</th><th scope="col">&pi;<sub>0</sub></th><th scope="col">SmolVLA</th>
       </tr></thead>
       <tbody>
         <tr class="group cue"><td colspan="7">Cueing (7)</td></tr>
@@ -349,7 +380,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </tbody>
     </table>
     </div>
-    <p class="legend"><span><i style="background:var(--best)"></i>best learned policy</span><span><i style="background:var(--second)"></i>second best</span><span>Experts are shown for reference and are not ranked. Averages are unweighted means over tasks.</span></p>
+    </details>
 
   </div>
 </section>
