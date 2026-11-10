@@ -109,6 +109,13 @@ h1{
 }
 h1 .hr{color:var(--robot)}
 .tagline{font-size:clamp(18px,2.2vw,22px);color:var(--ink-2);max-width:40ch;margin:0 auto;font-style:italic}
+.authors{margin:22px auto 0;max-width:84ch}
+.authors p{margin:0;display:flex;flex-wrap:wrap;justify-content:center}
+.authors span{white-space:nowrap}
+.authors sup{font-size:.68em;margin-left:1px}
+.authors .names{gap:4px 18px;font-size:17px;color:var(--ink)}
+.authors .affils{gap:2px 16px;margin-top:10px;font-size:14.5px;color:var(--ink-2)}
+.authors .equal{margin-top:6px;font-size:13px;color:var(--ink-2)}
 .btns{margin-top:26px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .btn{
   display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;
@@ -251,6 +258,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <span class="conf"><b>CoRL 2026</b> Conference on Robot Learning</span>
     <h1>HARP<span class="hr">-Bench</span></h1>
     <p class="tagline">Robot manipulation around active humans.</p>
+    <div class="authors">
+      <p class="names"><span>Qinhong Zhou<sup>1,&dagger;</sup></span> <span>Riley Zong<sup>2,&dagger;</sup></span> <span>Chunru Lin<sup>1</sup></span> <span>Diyi Hu<sup>4</sup></span> <span>Shivraj Singh Bhatti<sup>1</sup></span> <span>Hongxin Zhang<sup>1</sup></span> <span>Lin Qiu<sup>3</sup></span> <span>Hanqing Zeng<sup>3</sup></span> <span>Chuang Gan<sup>1</sup></span></p>
+      <p class="affils"><span><sup>1</sup>University of Massachusetts Amherst</span> <span><sup>2</sup>University of Minnesota Twin Cities</span> <span><sup>3</sup>Meta</span> <span><sup>4</sup>Independent Researcher</span></p>
+      <p class="equal"><sup>&dagger;</sup>Equal contribution</p>
+    </div>
 
     <div class="btns">
       <a class="btn" href="https://github.com/UMass-Embodied-AGI/harp">
@@ -441,7 +453,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <div class="citation-disclosure"><details open><summary>Citation</summary><pre><code>@inproceedings{harpbench2026,
   title     = {{HARP-Bench}: Benchmarking Robot Manipulation Around Active Humans},
-  author    = {Qinhong Zhou and Yun Zong and Chunru Lin and Shivraj Singh Bhatti and Hongxin Zhang and Diyi Hu and Lin Qiu and Hanqing Zeng and Chuang Gan},
+  author    = {Qinhong Zhou and Riley Zong and Chunru Lin and Diyi Hu and Shivraj Singh Bhatti and Hongxin Zhang and Lin Qiu and Hanqing Zeng and Chuang Gan},
   booktitle = {Conference on Robot Learning (CoRL)},
   year      = {2026},
   url       = {https://github.com/UMass-Embodied-AGI/harp}
